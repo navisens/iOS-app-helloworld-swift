@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83FCAA34B2FF59D560623081 /* Pods_iOS_helloworld_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72D2991065EB85371F0B7A26 /* Pods_iOS_helloworld_swift.framework */; };
 		E1B90C0F214C2475003FE6C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B90C0E214C2475003FE6C7 /* AppDelegate.swift */; };
 		E1B90C11214C2475003FE6C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B90C10214C2475003FE6C7 /* ViewController.swift */; };
 		E1B90C14214C2475003FE6C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B90C12214C2475003FE6C7 /* Main.storyboard */; };
 		E1B90C16214C2476003FE6C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B90C15214C2476003FE6C7 /* Assets.xcassets */; };
 		E1B90C19214C2476003FE6C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B90C17214C2476003FE6C7 /* LaunchScreen.storyboard */; };
+		E1B90C43214C27C2003FE6C7 /* MotionDnaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B90C42214C27C2003FE6C7 /* MotionDnaManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42D1861AA9CD98DC0BF32EF2 /* Pods-iOS-helloworld-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-helloworld-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-helloworld-swift/Pods-iOS-helloworld-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		72D2991065EB85371F0B7A26 /* Pods_iOS_helloworld_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_helloworld_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8224B747B9EE93DE08DC12F /* Pods-iOS-helloworld-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-helloworld-swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-helloworld-swift/Pods-iOS-helloworld-swift.release.xcconfig"; sourceTree = "<group>"; };
 		E1B90C0B214C2475003FE6C7 /* iOS-helloworld-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-helloworld-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B90C0E214C2475003FE6C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1B90C10214C2475003FE6C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		E1B90C15214C2476003FE6C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1B90C18214C2476003FE6C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1B90C1A214C2476003FE6C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1B90C42214C27C2003FE6C7 /* MotionDnaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionDnaManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83FCAA34B2FF59D560623081 /* Pods_iOS_helloworld_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18850B6B385E3792F94D8F3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72D2991065EB85371F0B7A26 /* Pods_iOS_helloworld_swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E1B90C02214C2475003FE6C7 = {
 			isa = PBXGroup;
 			children = (
 				E1B90C0D214C2475003FE6C7 /* iOS-helloworld-swift */,
 				E1B90C0C214C2475003FE6C7 /* Products */,
+				EAC7D037A817B690CF20E106 /* Pods */,
+				18850B6B385E3792F94D8F3D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +73,22 @@
 			children = (
 				E1B90C0E214C2475003FE6C7 /* AppDelegate.swift */,
 				E1B90C10214C2475003FE6C7 /* ViewController.swift */,
+				E1B90C42214C27C2003FE6C7 /* MotionDnaManager.swift */,
 				E1B90C12214C2475003FE6C7 /* Main.storyboard */,
 				E1B90C15214C2476003FE6C7 /* Assets.xcassets */,
 				E1B90C17214C2476003FE6C7 /* LaunchScreen.storyboard */,
 				E1B90C1A214C2476003FE6C7 /* Info.plist */,
 			);
 			path = "iOS-helloworld-swift";
+			sourceTree = "<group>";
+		};
+		EAC7D037A817B690CF20E106 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42D1861AA9CD98DC0BF32EF2 /* Pods-iOS-helloworld-swift.debug.xcconfig */,
+				D8224B747B9EE93DE08DC12F /* Pods-iOS-helloworld-swift.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1B90C1D214C2476003FE6C7 /* Build configuration list for PBXNativeTarget "iOS-helloworld-swift" */;
 			buildPhases = (
+				5F695606295B662A98FF7D3B /* [CP] Check Pods Manifest.lock */,
 				E1B90C07214C2475003FE6C7 /* Sources */,
 				E1B90C08214C2475003FE6C7 /* Frameworks */,
 				E1B90C09214C2475003FE6C7 /* Resources */,
+				C9DC6FA85343892C0B8F5FD7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,12 +159,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5F695606295B662A98FF7D3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS-helloworld-swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9DC6FA85343892C0B8F5FD7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iOS-helloworld-swift/Pods-iOS-helloworld-swift-frameworks.sh",
+				"${PODS_ROOT}/MotionDnaSDK/MotionDnaSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionDnaSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS-helloworld-swift/Pods-iOS-helloworld-swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E1B90C07214C2475003FE6C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E1B90C11214C2475003FE6C7 /* ViewController.swift in Sources */,
+				E1B90C43214C27C2003FE6C7 /* MotionDnaManager.swift in Sources */,
 				E1B90C0F214C2475003FE6C7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,10 +347,12 @@
 		};
 		E1B90C1E214C2476003FE6C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42D1861AA9CD98DC0BF32EF2 /* Pods-iOS-helloworld-swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z633UZ59K8;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "iOS-helloworld-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -296,10 +367,12 @@
 		};
 		E1B90C1F214C2476003FE6C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8224B747B9EE93DE08DC12F /* Pods-iOS-helloworld-swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z633UZ59K8;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "iOS-helloworld-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
