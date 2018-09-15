@@ -125,6 +125,11 @@
 				TargetAttributes = {
 					E1B90C0A214C2475003FE6C7 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -185,7 +190,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iOS-helloworld-swift/Pods-iOS-helloworld-swift-frameworks.sh",
-				"${PODS_ROOT}/MotionDnaSDK/MotionDnaSDK.framework",
+				"${PODS_ROOT}/../../../navisens/navisens-core/ios-sdk/build/release-universal/MotionDnaSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -234,6 +239,7 @@
 		E1B90C1B214C2476003FE6C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -266,6 +272,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -294,6 +301,7 @@
 		E1B90C1C214C2476003FE6C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -326,6 +334,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -338,6 +347,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -350,10 +360,12 @@
 			baseConfigurationReference = 42D1861AA9CD98DC0BF32EF2 /* Pods-iOS-helloworld-swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_CODE_COVERAGE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z633UZ59K8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "iOS-helloworld-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -370,10 +382,12 @@
 			baseConfigurationReference = D8224B747B9EE93DE08DC12F /* Pods-iOS-helloworld-swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_CODE_COVERAGE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z633UZ59K8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "iOS-helloworld-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

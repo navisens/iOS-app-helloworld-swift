@@ -34,10 +34,10 @@ class MotionDnaManager: MotionDnaSDK {
     }
     
     override func receiveNetworkData(_ motionDna: MotionDna!) {
-        receiveNetworkData(motionDna)
+        receiver?.receiveNetworkData(motionDna)
     }
     
     override func receiveNetworkData(_ opcode: NetworkCode, withPayload payload: [AnyHashable : Any]!) {
-        receiveNetworkData(opcode, withPayload: payload)
+        receiver?.receiveNetworkData(opcode, withPayload: payload)
     }
 }

@@ -28,6 +28,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var receiveMotionDnaTextField: UITextView!
     @IBOutlet weak var receiveNetworkDataTextField: UITextView!
     
+    var networkUsers:[String:MotionDna] = [:]
+    var networkUsersTimestamps:[String:Double] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         startMotionDna();
@@ -44,21 +47,46 @@ class ViewController: UIViewController {
         let globalLocation = location.globalLocation
         let motion = motionDna.getMotion()
         
-        let motionDnaLocalString = String(format:"Local XYZ Coordinates (meters) (%.2f,%.2f,%.2f)",localLocation.x,localLocation.y,localLocation.z)
+        let motionDnaLocalString = String(format:"Local XYZ Coordinates (meters) \n(%.2f,%.2f,%.2f)",localLocation.x,localLocation.y,localLocation.z)
         let motionDnaHeadingString = String(format:"Current Heading: %.2f",location.heading)
-        let motionDnaGlobalString = String(format:"Global Position: (Lat: %.6f, Lon: %.6f)",globalLocation.latitude,globalLocation.longitude)
-        let motionDnaMotionTypeString = String(format:"MotionType: %@",motionTypeToString(motionType: motion.motionType)!)
+        let motionDnaGlobalString = String(format:"Global Position: \n(Lat: %.6f, Lon: %.6f)",globalLocation.latitude,globalLocation.longitude)
+        let motionDnaMotionTypeString = String(format:"Motion Type: %@",motionTypeToString(motionType: motion.motionType)!)
         
-        let motionDnaString = String(format:"%@\n%@\n%@\n%@",motionDnaLocalString,
+        let motionDnaString = String(format:"MotionDna Location:\n%@\n%@\n%@\n%@",motionDnaLocalString,
                                      motionDnaHeadingString,
                                      motionDnaGlobalString,
                                      motionDnaMotionTypeString)
-        
-        receiveMotionDnaTextField.text = motionDnaString
+        DispatchQueue.main.async {
+            self.receiveMotionDnaTextField.text = motionDnaString
+        }
     }
     
     func receiveNetworkData(_ motionDna: MotionDna!) {
+        networkUsers[motionDna.getID()] = motionDna
+        let timeSinceBootSeconds = ProcessInfo.processInfo.systemUptime
+        networkUsersTimestamps[motionDna.getID()] = timeSinceBootSeconds
+        var activeNetworkUsersString = String()
+        var toRemove = [String]()
+        
+        activeNetworkUsersString.append("Network Shared Devices:\n")
 
+        for ( _, user) in networkUsers {
+            if (timeSinceBootSeconds - networkUsersTimestamps[user.getID()]! > 2.0) {
+                toRemove.append(user.getID())
+            } else {
+                activeNetworkUsersString = activeNetworkUsersString.appending(user.getDeviceName().components(separatedBy:";").last!)
+                let location = user.getLocation().localLocation
+                activeNetworkUsersString = activeNetworkUsersString.appending(String(format:" (%.2f, %.2f, %.2f)\n",location.x, location.y, location.z))
+            }
+        }
+        
+        for key in toRemove {
+            networkUsers.removeValue(forKey: key)
+            networkUsersTimestamps.removeValue(forKey: key)
+        }
+        DispatchQueue.main.async {
+            self.receiveNetworkDataTextField.text = activeNetworkUsersString
+        }
     }
     
     func receiveNetworkData(_ opcode: NetworkCode, withPayload payload: [AnyHashable : Any]!) {
@@ -66,6 +94,8 @@ class ViewController: UIViewController {
     }
     
     func startMotionDna() {
+        
+        manager.receiver = self;
         
         //    This functions starts up the SDK. You must pass in a valid developer's key in order for
         //    the SDK to function. IF the key has expired or there are other errors, you may receive
