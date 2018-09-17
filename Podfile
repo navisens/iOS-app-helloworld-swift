@@ -6,6 +6,5 @@ target 'iOS-helloworld-swift' do
   use_frameworks!
 
   # Pods for iOS-helloworld-swift
-#  pod 'MotionDnaSDK', :git => 'https://github.com/navisens/iOS-SDK.git'
-  pod 'MotionDnaSDK', :path => "/Users/jamesgrantham/navisens/navisens-core/ios-sdk/build/release-universal/"
+  pod 'MotionDnaSDK', :git => 'https://github.com/navisens/iOS-SDK.git'
 end
