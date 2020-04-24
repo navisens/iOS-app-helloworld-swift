@@ -59,10 +59,28 @@ class ViewController: UIViewController {
         let motionDnaGlobalString = String(format:"Global Position: \n(Lat: %.6f, Lon: %.6f)",globalLocation.latitude,globalLocation.longitude)
         let motionDnaMotionTypeString = String(format:"Motion Type: %@",motionTypeToString(motionType: motion.motionType)!)
 
-        let motionDnaString = String(format:"MotionDna Location:\n%@\n%@\n%@\n%@",motionDnaLocalString,
+        guard let classifiers = motionDna.getClassifiers() else {
+            return;
+        }
+        var motionDnaPredictionString = "Predictions (BETA):\n"
+        
+        for (classifierName, classifier) in classifiers {
+            motionDnaPredictionString.append(String(format: "Classifier: %@\n", classifierName))
+            motionDnaPredictionString.append(String(format: "\t prediction: %@ confidence: %.2f\n", classifier.currentPredictionLabel,classifier.currentPredictionConfidence))
+                
+            for (predictionLabel, predictionStats) in classifier.predictionStats {
+                motionDnaPredictionString.append(String(format: "\t%@\n", predictionLabel))
+                motionDnaPredictionString.append(String(format: "\t duration: %.2f\n", predictionStats.duration))
+                motionDnaPredictionString.append(String(format: "\t distance: %.2f\n", predictionStats.distance))
+            }
+            motionDnaPredictionString.append("\n")
+        }
+        
+        let motionDnaString = String(format:"MotionDna Location:\n%@\n%@\n%@\n%@\n%@",motionDnaLocalString,
                                      motionDnaHeadingString,
                                      motionDnaGlobalString,
-                                     motionDnaMotionTypeString)
+                                     motionDnaMotionTypeString,
+                                     motionDnaPredictionString)
         DispatchQueue.main.async {
             self.receiveMotionDnaTextField.text = motionDnaString
         }
