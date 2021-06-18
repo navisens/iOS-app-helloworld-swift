@@ -114,7 +114,10 @@ class ViewController: UIViewController, MotionDnaSDKDelegate {
     
     func startDemo() {
         motionDnaSDK = MotionDnaSDK(delegate: self)
+        
         let developerKey = "<--DEVELOPER-KEY-HERE-->"
+        //   The start(withDeveloperKey:) method initiates the SDK when passed a valid developer key. If the key has expired or there are other errors, you will
+        //   be notified through the report(status:message:) callback.
         motionDnaSDK.start(withDeveloperKey: developerKey)
     }
 }
